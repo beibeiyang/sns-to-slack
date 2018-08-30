@@ -8,7 +8,7 @@ This Lambda function (in both Node.js and Python):
 
 Follow these steps to configure a webhook in Slack:
 
-  1. Navigate to https://<your-team>.slack.com/apps
+  1. Navigate to `https://<your-team>.slack.com/apps`
   2. Select "Incoming WebHooks" to install
   3. Go to the configuration page of your new service.
   4. Choose the default channel where messages will be sent and click "Add Incoming WebHooks Integration".
