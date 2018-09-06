@@ -67,7 +67,7 @@ def handler(event, context):
     config = LambdaConfig(configfile="lambda.cfg", logger=logger)
 
     logger.debug("Received event: {}".format(event))
-    logger.info("{}SNS to Slack process started{}".format("*" * 10, "*" * 10))
+    logger.info("{} SNS to Slack process starts {}".format("*" * 10, "*" * 10))
 
     try:
         message = event["Records"][0]["Sns"]["Message"]

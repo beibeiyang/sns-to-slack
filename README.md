@@ -16,7 +16,7 @@ Follow these steps to configure a webhook in Slack:
 
 This Lambda must be triggered by SNS. 
 
-The SNS message body must atart with `ERROR`, `WARNING` or `SUCCESS`.
+The SNS message body must start with `ERROR`, `WARNING` or `SUCCESS`.
 
 ## How to Deploy Lambda Functions to AWS with Serverless and Containers
 
