@@ -36,7 +36,7 @@ class LambdaConfig:
             cp = configparser.ConfigParser()
             cp.read(configfile)
 
-            # read BOX FTP config
+            # read Slack config
             self.slack_host = cp.get("SLACK", "hostname")
             self.slack_port = cp.get("SLACK", "port")
             self.slack_endpoint = cp.get("SLACK", "endpoint")
@@ -44,7 +44,7 @@ class LambdaConfig:
             self.slack_username = cp.get("SLACK", "username")
             self.slack_icon_emoji = cp.get("SLACK", "icon_emoji")
 
-            # log BOX FTP config
+            # log Slack config
             logger.info("Slack host: {}".format(self.slack_host))
             logger.info("Slack port: {}".format(self.slack_port))
             logger.info("Slack endpoint: {}".format(self.slack_endpoint))
