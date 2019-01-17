@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
-'''
+"""
 Follow these steps to configure the webhook in Slack:
   1. Navigate to https://<your-team-domain>.slack.com/apps, click "Build" on top right
   2. Search for and select "Incoming WebHooks".
   3. Choose the default channel where messages will be sent and click "Add Incoming WebHooks Integration".
   4. Copy the webhook URL from the setup instructions and paste it into lambda.cfg
-'''
+"""
 
 import configparser
 import logging
@@ -28,7 +28,6 @@ class LambdaConfig:
     To access Snowflake Database Name for example, simply call:
         config.sf_dbname
     """
-
     def __init__(self, configfile, logger):
         try:
             logger.info("{}{}{}".format("#" * 10, "READ LAMBDA CONFIG", "#" * 10))
@@ -57,7 +56,6 @@ class LambdaConfig:
         except Exception as e:
             logger.exception("Error parsing the user-provided config file. Script will terminate. {}".format(repr(e)))
             sys.exit(-1)
-
 
 def handler(event, context):
     # Set logging level
@@ -101,7 +99,6 @@ def handler(event, context):
     hook_url = "https://{}:{}{}".format(config.slack_host, config.slack_port,
                                         config.slack_endpoint)
     logger.info("Slack Hook URL: {}".format(hook_url))
-
     logger.info("post_data: {}".format(post_data))
 
     try:
@@ -118,8 +115,8 @@ def handler(event, context):
         logger.info("Message posted to channel {}".format(config.slack_channel))
         logger.info("Response: {}".format(response.read()))
     except HTTPError as e:
-        logger.exception("Request failed: %d %s", e.code, e.reason)
+        logger.exception("Request failed: {] {}".format(e.code, e.reason))
     except URLError as e:
-        logger.exception("Server connection failed: %s", e.reason)
+        logger.exception("Server connection failed: {]".format(e.reason))
     except Exception as e:
-        logger.exception("Unknown exception: %s", repr(e))
+        logger.exception("Unknown exception: {}".format(repr(e)))
