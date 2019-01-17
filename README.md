@@ -5,6 +5,7 @@ This Lambda function (in both Node.js and Python):
 * Triggered by SNS
 * Read SNS Notifications of any events
 * Post the SNS messages to your team's Slack channel
+* Support of tierred messages and show them in Green, Yellow or Red
 
 Follow these steps to configure a webhook in Slack:
 
