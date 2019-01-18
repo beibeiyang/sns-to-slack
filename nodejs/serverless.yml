@@ -31,3 +31,7 @@ functions:
     memorySize: 128 # memorySize for this specific function.
     handler: index.handler
     timeout: 3 # Timeout for this specific function in seconds.  Overrides the default set above.
+    events: # The Events that trigger this Function
+    - sns:
+      topicName: sns-topic-name-to-be-created  # SNS topic will be created by Serverless
+      displayName: File Ingest Events
